@@ -1,6 +1,13 @@
-//Este componente será el template que mostrará los detalles de la receta
-import React from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+
+import { RecipesContext } from "../context/RecipesContext";
 
 export const RecipeDetailPage = () => {
-  return <div>RecipeDetailPage</div>;
+  const { id } = useParams();
+
+  const infoRecipes = useContext(RecipesContext);
+  const recipes = infoRecipes.recipes;
+
+  return <div>receta {id}</div>;
 };

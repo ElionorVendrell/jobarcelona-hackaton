@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-
+import { Link } from "react-router-dom";
 import { RecipesContext } from "../context/RecipesContext";
 
 export const RecipesList = () => {
@@ -14,7 +14,9 @@ export const RecipesList = () => {
   return (
     <div>
       {recipes.map((recipe) => (
-        <p>{recipe.title}</p>
+        <Link key={recipe.id} to={`/RecipeDetail/${recipe.id}`}>
+          <p>{recipe.title}</p>
+        </Link>
       ))}
     </div>
   );

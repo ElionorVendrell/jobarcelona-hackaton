@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Loading } from "../components/Loading";
-import { RecipeList } from "../components/RecipeList";
+import { RecipesList } from "../components/RecipesList";
 
 import { RecipesContext } from "../context/RecipesContext";
 
@@ -18,7 +18,7 @@ export const RecipeListPage = () => {
   return (
     <div>
       <Header />
-      {loading ? <Loading /> : <RecipeList />}
+      {loading ? <Loading /> : <RecipesList />}
       <Footer />
     </div>
   );

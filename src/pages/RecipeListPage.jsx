@@ -9,11 +9,11 @@ import { RecipesContext } from "../context/RecipesContext";
 
 export const RecipeListPage = () => {
   const infoRecipes = useContext(RecipesContext);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!infoRecipes);
 
   useEffect(() => {
-    infoRecipes ? setLoading(false) : setLoading(true);
-  }, []);
+    setLoading(!infoRecipes);
+  }, [infoRecipes]);
 
   return (
     <div>

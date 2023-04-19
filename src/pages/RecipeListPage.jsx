@@ -1,0 +1,1 @@
+// Este componente mostrará todas las tarjetas de recetas 

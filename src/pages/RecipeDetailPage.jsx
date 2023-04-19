@@ -1,0 +1,1 @@
+//Este componente será el template que mostrará los detalles de la receta

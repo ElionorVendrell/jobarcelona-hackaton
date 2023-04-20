@@ -66,6 +66,7 @@ p{
       background-color: white;
     } 
 .filter{
+    margin-right: 2rem;
     color: white; 
     border: 0.4px solid white;
     border-radius: 999px;
@@ -77,6 +78,7 @@ p{
 }
 
 .filter-selected{
+  margin-right: 2rem;
   border-radius: 999px;
     height: 50px;
     width: 120px;

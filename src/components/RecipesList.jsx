@@ -8,14 +8,56 @@ export const RecipesList = () => {
   const infoRecipes = useContext(RecipesContext);
   const recipes = infoRecipes.recipes;
 
+  const [glutenFreeSelected, setGlutenFreeSelected] = useState(false);
+  const [veganSelected, setVeganSelected] = useState(false);
+  const [vegetarianSelected, setVegetarianSelected] = useState(false);
+
+  const handleFilterClick = (filterName) => {
+    switch (filterName) {
+      case "gluten-free":
+        setGlutenFreeSelected(!glutenFreeSelected);
+        break;
+      case "vegan":
+        setVeganSelected(!veganSelected);
+        break;
+      case "vegetarian":
+        setVegetarianSelected(!vegetarianSelected);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
       <h1 className='m-4 text-center mb-6'>Discover the best recipes</h1>
 
       <div className='flex items-center justify-center'>
-        <p className='  mr-2 filter'>Gluten Free</p>
-        <p className=' mr-2 filter '>Vegan</p>
-        <p className='mr-2 filter '>Vegeterian</p>
+        <button
+          className={`mr-2 filter ${
+            glutenFreeSelected ? "filter-selected" : "filter"
+          }`}
+          onClick={() => handleFilterClick("gluten-free")}
+        >
+          Gluten Free
+        </button>
+
+        <button
+          className={`mr-2 filter ${
+            veganSelected ? "filter-selected" : "filter"
+          }`}
+          onClick={() => handleFilterClick("vegan")}
+        >
+          Vegan
+        </button>
+        <button
+          className={`mr-2 filter ${
+            vegetarianSelected ? "filter-selected" : ""
+          }`}
+          onClick={() => handleFilterClick("vegetarian")}
+        >
+          Vegeterian
+        </button>
       </div>
 
       <div className='container mx-auto grid grid-cols sm:grid-cols-1 md:grid-cols-2 md:gap-20 lg:grid-cols-3  gap-4'>

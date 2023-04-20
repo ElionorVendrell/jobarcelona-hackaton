@@ -1,10 +1,15 @@
 # Jobarcelona 2023 Hackathon - Phase 1
+
 This is the repository for the first phase of the Jobarcelona 2023 hackathon. The goal of this phase was to display a layout with recipe cards containing images that come from the Spoonacular API. Clicking on a recipe should display its ingredients and preparation instructions. Additionally, filters should be included.
 
+![Mockup mobile del proyecto](/src/assets/1.png)
+
 ## 🌐 Live Site
+
 https://jobarcelona-hackaton.vercel.app/
 
 ## 👩‍💻 Implemented Features:
+
 - Display layout with recipe cards containing images and information that comes from the Spoonacular API.
 - Display recipe details upon clicking a card, including ingredients and preparation instructions.
 - Routing.
@@ -16,7 +21,8 @@ https://jobarcelona-hackaton.vercel.app/
 - Responsive design.
 
 ## ⚛️ Technologies used
-- React JS  
+
+- React JS
 - JavaScript
 - Vite
 - React Router DOM
@@ -27,12 +33,18 @@ https://jobarcelona-hackaton.vercel.app/
 
 ## 📷 Visuals
 
+![Mockup desktop del proyecto](/src/assets/4.png)
+![Mockup ipad del proyecto](/src/assets/3.png)
+![Mockup mobile del proyecto](/src/assets/5.png)
+
 ## 🏁 How to start the app
+
 To use the project, you need to have npm installed and run the following command in the command line:
 npm run dev
 This command will start the development server and open the page in your browser.
 
 ## 📝 Additional Notes
+
 The project has been developed with Vite due to its speed and efficiency for small projects. For styling, Tailwind CSS and DaisyUI have been used, which are easy to modify and customize. React Router DOM has also been used to create page routes and useParams to find the recipe ID and display it. For icons, React Icons have been used.
 
 The web has been uploaded to the free hosting service Vercel. The axios library has been used to make requests to the Spoonacular API.
@@ -40,4 +52,5 @@ The web has been uploaded to the free hosting service Vercel. The axios library 
 In general, the required functionalities for phase 1 of the hackathon have been implemented, and effective and efficient technologies have been used to achieve them.
 
 ## 📩 Contact
+
 elivendrell@gmail.com

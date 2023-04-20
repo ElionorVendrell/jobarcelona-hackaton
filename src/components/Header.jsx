@@ -1,25 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ".././styles/index.css";
+
+import logo from "../assets/logo-spoonacular.svg";
 
 export const Header = () => {
   return (
     <div className='navbar bg-base-100'>
-      <div className='flex-1'>
-        <a className='btn btn-ghost normal-case text-xl'>Spoonacular</a>
+      <div className='flex-1 logo'>
+        <Link to='/' className='btn btn-ghost normal-case text-xl logo'>
+          <img src={logo} alt='logo de spoonacular' />
+          Spoonacular
+        </Link>
       </div>
-      <div className='flex-none'>
-        <button type='submit' className=' btn btn-ghost mr-2 normal-case'>
-          Gluten Free
-        </button>
-
-        <button type='submit' className='btn  btn-ghost mr-2 normal-case '>
-          Vegan
-        </button>
-
-        <button type='submit' className='btn btn-ghost mr-2 normal-case '>
-          Vegeterian
-        </button>
-      </div>
-
       <div className='form-control'>
         <div className='input-group input-group-xs'>
           <input

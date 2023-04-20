@@ -6,13 +6,31 @@ export const RecipesList = () => {
   const infoRecipes = useContext(RecipesContext);
   const recipes = infoRecipes.recipes;
 
-  const [currentRecipe, setCurrentRecipe] = useState("");
-  const saveName = (recipeName) => {
-    setCurrentRecipe(saveName);
-  };
-
   return (
     <div>
+      <div className='flex items-center justify-center'>
+        <button
+          type='submit'
+          className=' btn btn-ghost mr-2 normal-case filter'
+        >
+          Gluten Free
+        </button>
+
+        <button
+          type='submit'
+          className='btn  btn-ghost mr-2 normal-case filter '
+        >
+          Vegan
+        </button>
+
+        <button
+          type='submit'
+          className='btn btn-ghost mr-2 normal-case filter '
+        >
+          Vegeterian
+        </button>
+      </div>
+
       {recipes.map((recipe) => (
         <Link key={recipe.id} to={`/RecipeDetail/${recipe.id}`}>
           <p>{recipe.title}</p>

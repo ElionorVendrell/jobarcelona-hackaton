@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { MdRestaurant, MdAccessTime } from "react-icons/md";
+import { IoIosArrowBack } from "react-icons/io";
 
 import { Loading } from "../components/Loading";
 import { RecipesContext } from "../context/RecipesContext";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const RecipeDetailPage = () => {
   const { id } = useParams();
@@ -48,42 +52,60 @@ export const RecipeDetailPage = () => {
   const urlImage = recipeDetail.image;
   const image = urlImage;
   const ingredients = recipeDetail.extendedIngredients;
+
   return (
     <div>
-      <div className='card lg:card-side bg-base-100 shadow-xl'>
-        <figure>
-          <img src={image} alt='imagen del plato' />
-        </figure>
-        <div className='card-body'>
-          <h1 className='card-title'>{recipeDetail.title}</h1>
-          <p>Click the button to listen on Spotiwhy app.</p>
-          <div className='card-actions justify-end'>
-            <button className='btn btn-primary'>Listen</button>
+      <Header />
+
+      <Link to='/' className='flex flex-row items-center mt-10 ml-10'>
+        <IoIosArrowBack /> <p>Back</p>
+      </Link>
+
+      <div className='card bg-base-100 shadow-xl pb-10'>
+        <div className=' grid h-auto place-items-center'>
+          <h1 className='title text-center m-2 mt-6'>{recipeDetail.title}</h1>
+
+          <figure className='mt-6'>
+            <img className='rounded-3xl' src={image} alt='imagen del plato' />
+          </figure>
+
+          <div className='flex flex-row gap-2 mt-6'>
+            {recipeDetail.glutenFree ? (
+              <p className='type'>gluten free</p>
+            ) : null}
+            {recipeDetail.vegetarian ? (
+              <p className='type'>vegetarian</p>
+            ) : null}
+            {recipeDetail.vegan ? <p className='type'>vegan</p> : null}
           </div>
+
+          <div className='flex flex-row items-center m-4 '>
+            <MdRestaurant className='mr-2 type' />
+            <p className='mr-10 type'>{recipeDetail.servings}</p>
+            <MdAccessTime className='mr-2 type' />
+            <p className='mr-10 type'>{recipeDetail.readyInMinutes} min</p>
+            <p className='type'>{recipeDetail.pricePerServing} $</p>
+          </div>
+
+          <h2 className='mt-6 mb-6'>Ingredients</h2>
+          <ul className='grid grid-cols gap-2 sm:grid-cols-1 md:grid-cols-2 mx-auto max-w-screen-lg'>
+            {ingredients.map((recipe, index) => (
+              <li
+                key={index}
+                className='ml-20 max-w-sm list-disc break-inside-avoid-column'
+              >
+                {recipe.original}
+              </li>
+            ))}
+          </ul>
+
+          <h2 className='mt-10 mb-6'>Instructions</h2>
+          <p className=' pl-10 pr-10 md:mr-20 md:ml-20'>
+            {cleanInstructions(recipeDetail.instructions)}
+          </p>
         </div>
       </div>
-
-      <h1>{recipeDetail.title}</h1>
-      <img src={image} />
-
-      {recipeDetail.glutenFree ? <p>gluten free</p> : null}
-      {recipeDetail.vegetarian ? <p>vegetarian</p> : null}
-      {recipeDetail.vegan ? <p>vegan</p> : null}
-
-      <MdRestaurant />
-      <p>{recipeDetail.servings}</p>
-
-      <MdAccessTime />
-      <p>{recipeDetail.readyInMinutes} min</p>
-
-      <p>{recipeDetail.pricePerServing} $</p>
-
-      <p>
-        {ingredients.map((recipe) => (
-          <li>{recipe.original}</li>
-        ))}
-      </p>
-      <p>{cleanInstructions(recipeDetail.instructions)}</p>
+      <Footer />
     </div>
   );
 };

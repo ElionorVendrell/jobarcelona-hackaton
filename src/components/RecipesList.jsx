@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { RecipesContext } from "../context/RecipesContext";
 
 import { MdRestaurant, MdAccessTime } from "react-icons/md";
+import { BsArrowUpCircle } from "react-icons/bs";
 
 export const RecipesList = () => {
   const infoRecipes = useContext(RecipesContext);
@@ -43,7 +44,14 @@ export const RecipesList = () => {
   };
 
   const handleShowMoreClick = () => {
-    loadMoreRecipes(6);
+    loadMoreRecipes(4);
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -118,6 +126,11 @@ export const RecipesList = () => {
       <div className='flex justify-center items-center m-6'>
         <button onClick={handleShowMoreClick} className='btn'>
           Show More
+        </button>
+      </div>
+      <div className='fixed bottom-6 right-6'>
+        <button onClick={handleScrollToTop} className='btn btn-primary'>
+          <BsArrowUpCircle style={{ fontSize: "30px", color: "white" }} />
         </button>
       </div>
     </div>

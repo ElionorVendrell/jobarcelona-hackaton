@@ -121,7 +121,7 @@ color:#697c56
 }
 
 /* ANIMATIONS */
-
 .card{
-  animation:animate__backInUp;
+  animation: slideInUp;
+  animation-duration: 1.2s;
 }

@@ -18,7 +18,7 @@ export const RecipesList = () => {
         <p className='mr-2 filter '>Vegeterian</p>
       </div>
 
-      <div className='container mx-auto grid grid-cols sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mr-10 gap-4'>
+      <div className='container mx-auto grid grid-cols sm:grid-cols-1 md:grid-cols-2 md:gap-20 lg:grid-cols-3  gap-4'>
         {recipes.map((recipe) => (
           <Link key={recipe.id} to={`/RecipeDetail/${recipe.id}`}>
             <div className='card card-list w-96 bg-white shadow-xl mt-10'>

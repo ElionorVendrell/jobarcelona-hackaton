@@ -7,6 +7,7 @@ import { MdRestaurant, MdAccessTime } from "react-icons/md";
 export const RecipesList = () => {
   const infoRecipes = useContext(RecipesContext);
   const recipes = infoRecipes.recipes;
+  const { loadMoreRecipes } = useContext(RecipesContext);
 
   const [glutenFreeSelected, setGlutenFreeSelected] = useState(false);
   const [veganSelected, setVeganSelected] = useState(false);
@@ -41,13 +42,17 @@ export const RecipesList = () => {
     return true;
   };
 
+  const handleShowMoreClick = () => {
+    loadMoreRecipes(6);
+  };
+
   return (
     <div>
       <h1 className='m-4 text-center mb-6'>Discover the best recipes</h1>
 
       <div className='flex items-center justify-center'>
         <button
-          className={`mr-2 filter ${
+          className={`filter ${
             glutenFreeSelected ? "filter-selected" : "filter"
           }`}
           onClick={() => handleFilterClick("gluten-free")}
@@ -56,17 +61,13 @@ export const RecipesList = () => {
         </button>
 
         <button
-          className={`mr-2 filter ${
-            veganSelected ? "filter-selected" : "filter"
-          }`}
+          className={`filter ${veganSelected ? "filter-selected" : "filter"}`}
           onClick={() => handleFilterClick("vegan")}
         >
           Vegan
         </button>
         <button
-          className={`mr-2 filter ${
-            vegetarianSelected ? "filter-selected" : ""
-          }`}
+          className={`filter ${vegetarianSelected ? "filter-selected" : ""}`}
           onClick={() => handleFilterClick("vegetarian")}
         >
           Vegeterian
@@ -115,7 +116,9 @@ export const RecipesList = () => {
         ))}
       </div>
       <div className='flex justify-center items-center m-6'>
-        <button className='btn'>Show More</button>
+        <button onClick={handleShowMoreClick} className='btn'>
+          Show More
+        </button>
       </div>
     </div>
   );

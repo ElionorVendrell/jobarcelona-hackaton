@@ -28,6 +28,19 @@ export const RecipesList = () => {
     }
   };
 
+  const filterRecipes = (recipe) => {
+    if (veganSelected && !recipe.vegan) {
+      return false;
+    }
+    if (glutenFreeSelected && !recipe.glutenFree) {
+      return false;
+    }
+    if (vegetarianSelected && !recipe.vegetarian) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <div>
       <h1 className='m-4 text-center mb-6'>Discover the best recipes</h1>
@@ -61,7 +74,7 @@ export const RecipesList = () => {
       </div>
 
       <div className='container mx-auto grid grid-cols sm:grid-cols-1 md:grid-cols-2 md:gap-20 lg:grid-cols-3  gap-4'>
-        {recipes.map((recipe) => (
+        {recipes.filter(filterRecipes).map((recipe) => (
           <Link key={recipe.id} to={`/RecipeDetail/${recipe.id}`}>
             <div className='card card-list w-96 bg-white shadow-xl mt-10'>
               <figure>

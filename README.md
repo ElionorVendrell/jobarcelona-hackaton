@@ -4,6 +4,11 @@ This is the repository for the first phase of the Jobarcelona 2023 hackathon. Th
 
 ![Mockup mobile del proyecto](/src/assets/1.png)
 
+## Code quality rating on CodeFactor
+**CodeFactor Rating A+**
+
+[![CodeFactor](https://www.codefactor.io/repository/github/elionorvendrell/jobarcelona-hackaton/badge)](https://www.codefactor.io/repository/github/elionorvendrell/jobarcelona-hackaton)
+
 ## 🌐 Live Site
 
 https://jobarcelona-hackaton.vercel.app/

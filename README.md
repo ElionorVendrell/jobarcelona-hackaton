@@ -39,9 +39,26 @@ https://jobarcelona-hackaton.vercel.app/
 
 ## 🏁 How to start the app
 
-To use the project, you need to have npm installed and run the following command in the command line:
-npm run dev
-This command will start the development server and open the page in your browser.
+1. Clone this repository
+
+`git clone https://github.com/ElionorVendrell/jobarcelona-hackaton.git `
+
+2. Access the app directory
+
+`cd <repository folder>`
+
+3. Installation
+
+`npm install`
+
+4. Run
+
+`npm run dev`
+
+**Important you need to put your own API key in order to use app.**
+
+
+API: https://spoonacular.com/food-api
 
 ## 📝 Additional Notes
 

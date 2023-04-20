@@ -6,7 +6,7 @@ import logo from "../assets/logo-spoonacular.svg";
 
 export const Header = () => {
   return (
-    <div className='navbar bg-base-100'>
+    <div className='navbar'>
       <div className='flex-1 logo'>
         <Link to='/' className='btn btn-ghost normal-case text-xl logo'>
           <img src={logo} alt='logo de spoonacular' />

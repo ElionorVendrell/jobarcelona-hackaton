@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { MdRestaurant, MdAccessTime } from "react-icons/md";
-import { IoIosArrowBack } from "react-icons/io";
+import { BsArrowLeftCircle } from "react-icons/bs";
 
 import { Loading } from "../components/Loading";
 import { RecipesContext } from "../context/RecipesContext";
@@ -57,27 +57,21 @@ export const RecipeDetailPage = () => {
     <div>
       <Header />
 
-      <Link to='/' className='flex flex-row items-center mt-10 ml-10'>
-        <IoIosArrowBack /> <p>Back</p>
-      </Link>
-
-      <div className='card bg-base-100 shadow-xl pb-10'>
+      <div className='card mx-auto card-detail bg-base-100 shadow-xl pb-10'>
+        <Link to='/' className='flex flex-row items-center mt-10 ml-10'>
+          <BsArrowLeftCircle className='back' />
+        </Link>
         <div className=' grid h-auto place-items-center'>
-          <h1 className='title text-center m-2 mt-6'>{recipeDetail.title}</h1>
+          <h1 className='title title-detail text-center m-2 mt-6'>
+            {recipeDetail.title}
+          </h1>
 
           <figure className='mt-6'>
             <img className='rounded-3xl' src={image} alt='imagen del plato' />
           </figure>
-
-          <div className='flex flex-row gap-2 mt-6'>
-            {recipeDetail.glutenFree ? (
-              <p className='type'>gluten free</p>
-            ) : null}
-            {recipeDetail.vegetarian ? (
-              <p className='type'>vegetarian</p>
-            ) : null}
-            {recipeDetail.vegan ? <p className='type'>vegan</p> : null}
-          </div>
+          <p style={{ fontSize: "14px" }} className='type ml-6 mr-6'>
+            By {recipeDetail.creditsText}
+          </p>
 
           <div className='flex flex-row items-center m-4 '>
             <MdRestaurant className='mr-2 type' />
@@ -85,6 +79,19 @@ export const RecipeDetailPage = () => {
             <MdAccessTime className='mr-2 type' />
             <p className='mr-10 type'>{recipeDetail.readyInMinutes} min</p>
             <p className='type'>{recipeDetail.pricePerServing} $</p>
+          </div>
+
+          <div className='card-actions justify-center'>
+            {recipeDetail.glutenFree ? (
+              <div className='badge badge-outline'>Gluten Free</div>
+            ) : null}
+
+            {recipeDetail.vegan ? (
+              <div className='badge badge-outline'>Vegan</div>
+            ) : null}
+            {recipeDetail.vegetarian ? (
+              <div className='badge badge-outline'>Vegetarian</div>
+            ) : null}
           </div>
 
           <h2 className='mt-6 mb-6'>Ingredients</h2>

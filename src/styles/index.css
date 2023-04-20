@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 
- 
+ /* GENERAL */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #798b66;
   line-height: 1.5;
 }
 
@@ -19,12 +20,12 @@ a:hover {
   color: #697c56;
 }
 
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
   font-weight: 600;
-  color: #697c56;
+  color: white
+  /* color: #697c56; */
 }
 
 h2{
@@ -44,20 +45,69 @@ p{
   font-weight:400;
 }
 
-.type{
-  color: #7b7b7b;
-  font-weight:400;
-}
 
+/* HEADER */
 .logo img {
   max-width: 40px;
   height: auto;
 }
 
+/* PAGE RECIPES LIST */
+.type{
+  color: #7b7b7b;
+  font-weight:400;
+}
+.card-list {
+  margin: auto;
+  margin-top: 2rem;
+      max-width: 350px;
+      max-height: 400px;
+      min-height: 400px;
+      background-color: white;
+    } 
 .filter{
-  color: #697c56; 
+    color: white; 
+    border: 0.4px solid white;
+    border-radius: 999px;
+    height: 50px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .filter-selected{
- color: #38452c; 
+  border-radius: 999px;
+    height: 50px;
+    width: 120px;
+  background-color: white;
+ color: #697c56; 
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
+
+/* RECIPE DETAILS PAGE */
+.card-detail{
+  background-color: white;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-top: 15px;
+  max-width: 1000px;
+  padding-bottom: 100px;
+}
+
+.title-detail{
+color:#697c56
+}
+
+.back{
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+/* ICONS */
+.gluten-icon{
+  font-size: 10px;
+}
+

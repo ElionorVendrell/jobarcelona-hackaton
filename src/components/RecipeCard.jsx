@@ -1,1 +1,0 @@
-//esto será el template de la tarjeta para todas las recetas

@@ -29,8 +29,6 @@ const RecipesContextProvider = ({ children }) => {
     }
   };
 
-  console.log("info", recipes);
-
   return (
     <RecipesContext.Provider value={{ recipes, loadMoreRecipes }}>
       {children}

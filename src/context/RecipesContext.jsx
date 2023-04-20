@@ -9,7 +9,7 @@ const RecipesContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchRecipes = async () => {
       const response = await axios.get(
-        "https://api.spoonacular.com/recipes/random?number=10&apiKey=0f5894f887894038a3734c2b91ca0660"
+        "https://api.spoonacular.com/recipes/random?number=12&apiKey=0f5894f887894038a3734c2b91ca0660"
       );
       setRecipes(response.data.recipes);
     };

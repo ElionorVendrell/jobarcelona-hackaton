@@ -51,6 +51,12 @@ p{
   max-width: 40px;
   height: auto;
 }
+.logo{  color: white;}
+.logo:hover{
+  color:#2b2b2b;
+}
+
+
 
 /* PAGE RECIPES LIST */
 .type{
@@ -114,3 +120,8 @@ color:#697c56
   font-size: 10px;
 }
 
+/* ANIMATIONS */
+
+.card{
+  animation:animate__backInUp;
+}

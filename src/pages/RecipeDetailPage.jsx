@@ -67,7 +67,7 @@ export const RecipeDetailPage = () => {
           </h1>
 
           <figure className='mt-6'>
-            <img className='rounded-3xl' src={image} alt='imagen del plato' />
+            <img className='rounded-3xl' src={image} alt='imagen receta' />
           </figure>
           <p style={{ fontSize: "14px" }} className='type ml-6 mr-6'>
             By {recipeDetail.creditsText}

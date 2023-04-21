@@ -34,6 +34,7 @@ https://jobarcelona-hackaton.vercel.app/
 - React Icons
 - Tailwind CSS and DaisyUI
 - Spoonacular API
+- Axios
 - Free Hosting Vercel
 
 ## 📷 Visuals
